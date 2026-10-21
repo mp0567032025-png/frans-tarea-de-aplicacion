@@ -1,0 +1,261 @@
+/* Define los colores y medidas reutilizables para toda la aplicación. */
+:root { /* Inicia las variables globales de diseño. */
+  --fondo: #f3f5fb; /* Define el color de fondo general. */
+  --superficie: #ffffff; /* Define el color de las tarjetas. */
+  --texto: #1d2540; /* Define el color principal del texto. */
+  --suave: #68718b; /* Define el color de textos secundarios. */
+  --primario: #5b5bd6; /* Define el color principal de botones y detalles. */
+  --primario-oscuro: #4141ae; /* Define el color del botón al pasar el cursor. */
+  --borde: #e2e6f0; /* Define el color de los bordes. */
+  --exito: #20805b; /* Define el color para las tareas completadas. */
+} /* Cierra las variables globales. */
+
+/* Aplica un cálculo de tamaño más predecible a todos los elementos. */
+* { /* Selecciona todos los elementos de la página. */
+  box-sizing: border-box; /* Incluye el relleno y el borde dentro del tamaño declarado. */
+} /* Cierra la regla universal. */
+
+/* Configura la apariencia básica del documento. */
+body { /* Selecciona el cuerpo de la página. */
+  margin: 0; /* Elimina el margen predeterminado del navegador. */
+  min-height: 100vh; /* Hace que el fondo cubra como mínimo toda la altura visible. */
+  background: radial-gradient(circle at top left, #e6e8ff, var(--fondo) 48%); /* Añade un fondo suave con degradado. */
+  color: var(--texto); /* Aplica el color principal del texto. */
+  font-family: Arial, Helvetica, sans-serif; /* Define una tipografía clara y disponible en la mayoría de equipos. */
+  line-height: 1.5; /* Mejora la separación vertical entre líneas de texto. */
+} /* Cierra los estilos del cuerpo. */
+
+/* Centra el contenido y limita su anchura. */
+.app { /* Selecciona el contenedor principal de la aplicación. */
+  width: min(100% - 32px, 760px); /* Mantiene espacio lateral y limita el ancho máximo. */
+  margin: 0 auto; /* Centra el contenedor horizontalmente. */
+  padding: 48px 0 28px; /* Añade espacio arriba y abajo. */
+} /* Cierra el contenedor principal. */
+
+/* Da espacio al encabezado de bienvenida. */
+.encabezado { /* Selecciona el encabezado principal. */
+  margin-bottom: 28px; /* Separa el encabezado de la primera tarjeta. */
+  text-align: center; /* Centra el texto del encabezado. */
+} /* Cierra el encabezado. */
+
+/* Estiliza la pequeña etiqueta superior. */
+.etiqueta { /* Selecciona la etiqueta del proyecto. */
+  color: var(--primario); /* Usa el color principal para destacarla. */
+  font-size: 0.75rem; /* Reduce el tamaño de la etiqueta. */
+  font-weight: 700; /* Hace que la etiqueta aparezca en negrita. */
+  letter-spacing: 0.13em; /* Separa ligeramente las letras. */
+} /* Cierra la etiqueta. */
+
+/* Da jerarquía al título principal. */
+h1 { /* Selecciona el título principal. */
+  margin: 8px 0; /* Añade espacio arriba y abajo del título. */
+  font-size: clamp(2.2rem, 7vw, 3.5rem); /* Ajusta el tamaño del título según el ancho de pantalla. */
+  line-height: 1.1; /* Reduce el espacio entre líneas si el título se divide. */
+} /* Cierra el título principal. */
+
+/* Estiliza la descripción del encabezado. */
+.subtitulo { /* Selecciona el texto secundario del encabezado. */
+  margin: 0; /* Quita márgenes innecesarios. */
+  color: var(--suave); /* Usa un tono secundario para diferenciarlo del título. */
+} /* Cierra el subtítulo. */
+
+/* Diseña las tarjetas blancas de contenido. */
+.panel { /* Selecciona cada sección con apariencia de tarjeta. */
+  margin-bottom: 18px; /* Separa las tarjetas entre sí. */
+  padding: 24px; /* Añade espacio interno alrededor del contenido. */
+  border: 1px solid var(--borde); /* Dibuja un borde sutil. */
+  border-radius: 18px; /* Redondea las esquinas de la tarjeta. */
+  background: var(--superficie); /* Aplica el fondo blanco. */
+  box-shadow: 0 12px 30px rgba(35, 43, 80, 0.06); /* Añade una sombra ligera para dar profundidad. */
+} /* Cierra las tarjetas. */
+
+/* Ajusta los títulos de sección. */
+h2 { /* Selecciona los títulos secundarios. */
+  margin: 0 0 16px; /* Deja espacio debajo del título. */
+  font-size: 1.2rem; /* Define un tamaño legible para los títulos de tarjeta. */
+} /* Cierra los títulos secundarios. */
+
+/* Presenta la etiqueta del campo de entrada. */
+label { /* Selecciona las etiquetas de formulario. */
+  display: block; /* Coloca la etiqueta en su propia línea. */
+  margin-bottom: 8px; /* Separa la etiqueta del campo de entrada. */
+  font-size: 0.9rem; /* Define un tamaño compacto para la etiqueta. */
+  font-weight: 700; /* Destaca el nombre del campo. */
+} /* Cierra las etiquetas. */
+
+/* Alinea el campo y el botón para agregar tareas. */
+.fila-formulario { /* Selecciona la fila del formulario. */
+  display: flex; /* Coloca el campo y el botón en una misma fila. */
+  gap: 10px; /* Separa el campo del botón. */
+} /* Cierra la fila del formulario. */
+
+/* Estiliza el campo de texto. */
+input[type="text"] { /* Selecciona el campo donde se escribe la tarea. */
+  width: 100%; /* Permite que el campo ocupe el espacio disponible. */
+  min-width: 0; /* Evita que el campo fuerce un ancho excesivo en pantallas pequeñas. */
+  padding: 12px 14px; /* Añade espacio dentro del campo. */
+  border: 1px solid var(--borde); /* Dibuja un borde sutil alrededor del campo. */
+  border-radius: 10px; /* Redondea las esquinas del campo. */
+  color: var(--texto); /* Aplica el color principal al texto escrito. */
+  font: inherit; /* Hereda la tipografía del documento. */
+} /* Cierra el campo de texto. */
+
+/* Resalta el campo cuando recibe el foco del teclado. */
+input[type="text"]:focus { /* Selecciona el campo mientras está enfocado. */
+  outline: 3px solid #dadaff; /* Dibuja un anillo visible de enfoque. */
+  border-color: var(--primario); /* Cambia el borde al color principal. */
+} /* Cierra el estado de enfoque. */
+
+/* Define los estilos base de los botones. */
+button { /* Selecciona todos los botones. */
+  padding: 12px 17px; /* Añade espacio interior al botón. */
+  border: 0; /* Elimina el borde predeterminado. */
+  border-radius: 10px; /* Redondea las esquinas del botón. */
+  background: var(--primario); /* Aplica el color principal de fondo. */
+  color: #ffffff; /* Usa texto blanco para mejorar el contraste. */
+  font: inherit; /* Mantiene la misma tipografía de la aplicación. */
+  font-weight: 700; /* Destaca el texto del botón. */
+  cursor: pointer; /* Muestra el cursor de interacción. */
+  transition: background 160ms ease, transform 160ms ease; /* Suaviza los cambios de color y posición. */
+} /* Cierra los estilos base de los botones. */
+
+/* Cambia el aspecto del botón al pasar el cursor. */
+button:hover { /* Selecciona los botones bajo el cursor. */
+  background: var(--primario-oscuro); /* Oscurece el botón al pasar el cursor. */
+  transform: translateY(-1px); /* Eleva ligeramente el botón para dar respuesta visual. */
+} /* Cierra el estado hover. */
+
+/* Indica visualmente cuándo un botón está desactivado. */
+button:disabled { /* Selecciona los botones que no se pueden usar. */
+  opacity: 0.45; /* Reduce la intensidad visual del botón. */
+  cursor: not-allowed; /* Indica que la acción no está disponible. */
+  transform: none; /* Evita que el botón desactivado se eleve. */
+} /* Cierra el estado desactivado. */
+
+/* Reserva espacio para los mensajes de confirmación. */
+.mensaje { /* Selecciona el área de mensajes. */
+  min-height: 1.5em; /* Evita que la tarjeta cambie mucho de altura al aparecer mensajes. */
+  margin: 8px 0 0; /* Separa el mensaje del formulario. */
+  color: var(--exito); /* Usa un color verde para las confirmaciones. */
+  font-size: 0.9rem; /* Mantiene el mensaje discreto. */
+} /* Cierra el área de mensajes. */
+
+/* Distribuye el título y el contador de la lista. */
+.encabezado-lista { /* Selecciona la fila del encabezado de tareas. */
+  display: flex; /* Coloca el título y el contador uno junto al otro. */
+  align-items: center; /* Alinea verticalmente los elementos. */
+  justify-content: space-between; /* Coloca el título y el contador en extremos opuestos. */
+  gap: 12px; /* Mantiene separación si el espacio es reducido. */
+} /* Cierra el encabezado de la lista. */
+
+/* Da estilo al contador de tareas pendientes. */
+.contador { /* Selecciona la etiqueta del contador. */
+  padding: 5px 10px; /* Añade espacio alrededor del número. */
+  border-radius: 999px; /* Convierte la etiqueta en una píldora redondeada. */
+  background: #efefff; /* Aplica un fondo violeta claro. */
+  color: var(--primario-oscuro); /* Destaca el número con el color principal oscuro. */
+  font-size: 0.8rem; /* Usa un tamaño compacto. */
+  font-weight: 700; /* Hace más visible el contador. */
+} /* Cierra el contador. */
+
+/* Quita los estilos predeterminados de la lista. */
+.lista-tareas { /* Selecciona la lista de tareas. */
+  display: grid; /* Organiza las tareas en filas. */
+  gap: 10px; /* Separa cada tarea de la siguiente. */
+  margin: 0; /* Elimina el margen predeterminado. */
+  padding: 0; /* Elimina la sangría predeterminada. */
+  list-style: none; /* Oculta las viñetas de la lista. */
+} /* Cierra la lista de tareas. */
+
+/* Diseña cada fila de tarea. */
+.tarea { /* Selecciona cada tarea individual. */
+  display: flex; /* Alinea la casilla, el texto y el botón. */
+  align-items: center; /* Centra los elementos verticalmente. */
+  gap: 12px; /* Añade separación entre los elementos de la tarea. */
+  padding: 12px; /* Añade espacio interior a cada fila. */
+  border: 1px solid var(--borde); /* Dibuja un borde alrededor de la tarea. */
+  border-radius: 12px; /* Redondea las esquinas de la fila. */
+  overflow-wrap: anywhere; /* Permite dividir palabras largas si hace falta. */
+} /* Cierra cada fila de tarea. */
+
+/* Ajusta el control de completado. */
+.tarea input[type="checkbox"] { /* Selecciona la casilla de cada tarea. */
+  width: 18px; /* Define el ancho de la casilla. */
+  height: 18px; /* Define la altura de la casilla. */
+  flex-shrink: 0; /* Evita que la casilla se encoja. */
+  accent-color: var(--primario); /* Usa el color principal en la casilla marcada. */
+} /* Cierra la casilla de completado. */
+
+/* Permite que la descripción use el espacio restante. */
+.tarea span { /* Selecciona el texto de cada tarea. */
+  flex: 1; /* Hace que el texto ocupe el espacio disponible. */
+} /* Cierra la descripción de la tarea. */
+
+/* Diferencia las tareas ya completadas. */
+.tarea.completada span { /* Selecciona el texto de una tarea completada. */
+  color: var(--suave); /* Atenúa el color del texto completado. */
+  text-decoration: line-through; /* Tacha el texto para indicar que ya se terminó. */
+} /* Cierra el estilo de tarea completada. */
+
+/* Define un estilo secundario para el botón de eliminar. */
+.boton-eliminar { /* Selecciona el botón de eliminar de cada tarea. */
+  padding: 7px 10px; /* Reduce el espacio interior del botón. */
+  background: #fff0f0; /* Usa un fondo rojizo claro. */
+  color: #a42e3b; /* Aplica texto rojo oscuro. */
+  font-size: 0.82rem; /* Reduce el tamaño del texto del botón. */
+} /* Cierra el botón de eliminar. */
+
+/* Cambia el fondo del botón de eliminar al pasar el cursor. */
+.boton-eliminar:hover { /* Selecciona el botón de eliminar bajo el cursor. */
+  background: #ffdede; /* Oscurece ligeramente el fondo rojizo. */
+} /* Cierra el estado hover del botón de eliminar. */
+
+/* Estiliza el mensaje que aparece cuando no hay tareas. */
+.estado-vacio { /* Selecciona el texto de lista vacía. */
+  padding: 18px 0; /* Añade espacio arriba y abajo del mensaje. */
+  color: var(--suave); /* Usa un color secundario para el mensaje. */
+  text-align: center; /* Centra el mensaje en la tarjeta. */
+} /* Cierra el mensaje de lista vacía. */
+
+/* Estiliza el botón que limpia tareas terminadas. */
+.boton-secundario { /* Selecciona el botón de limpieza. */
+  margin-top: 12px; /* Separa el botón de la lista. */
+  background: #edf0f8; /* Usa un fondo gris azulado. */
+  color: var(--texto); /* Mantiene el texto oscuro y legible. */
+} /* Cierra el botón secundario. */
+
+/* Cambia el fondo del botón secundario al pasar el cursor. */
+.boton-secundario:hover { /* Selecciona el botón secundario bajo el cursor. */
+  background: #dfe4f2; /* Oscurece ligeramente el fondo del botón. */
+} /* Cierra el estado hover secundario. */
+
+/* Presenta el pie de página. */
+footer { /* Selecciona el pie de página de la aplicación. */
+  padding-top: 8px; /* Añade espacio sobre el texto del pie. */
+  color: var(--suave); /* Usa un tono secundario. */
+  font-size: 0.8rem; /* Mantiene el pie de página discreto. */
+  text-align: center; /* Centra el texto del pie. */
+} /* Cierra el pie de página. */
+
+/* Adapta el formulario y las tareas a pantallas pequeñas. */
+@media (max-width: 520px) { /* Aplica estos estilos cuando la pantalla mide 520 píxeles o menos. */
+  .app { /* Selecciona el contenedor principal en pantallas pequeñas. */
+    padding-top: 28px; /* Reduce el espacio superior en móviles. */
+  } /* Cierra el ajuste del contenedor. */
+  .panel { /* Selecciona las tarjetas en pantallas pequeñas. */
+    padding: 18px; /* Reduce el espacio interior para aprovechar el ancho. */
+  } /* Cierra el ajuste de las tarjetas. */
+  .fila-formulario { /* Selecciona la fila del formulario en móviles. */
+    flex-direction: column; /* Coloca el campo y el botón en columnas. */
+  } /* Cierra el ajuste del formulario. */
+  .fila-formulario button { /* Selecciona el botón de agregar en móviles. */
+    width: 100%; /* Hace que el botón ocupe todo el ancho disponible. */
+  } /* Cierra el ajuste del botón de agregar. */
+  .tarea { /* Selecciona las tareas en móviles. */
+    gap: 8px; /* Reduce la separación entre elementos. */
+    padding: 10px; /* Reduce el relleno de cada tarea. */
+  } /* Cierra el ajuste de tareas. */
+  .boton-eliminar { /* Selecciona el botón de eliminar en móviles. */
+    padding: 7px; /* Reduce el relleno para ahorrar espacio. */
+  } /* Cierra el ajuste del botón de eliminar. */
+} /* Cierra la consulta de medios. */
